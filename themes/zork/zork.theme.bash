@@ -42,7 +42,7 @@ modern_scm_prompt() {
         then
                 return
         else
-                echo "[$(scm_char)][$(scm_prompt_info)]"
+                echo "($(scm_prompt_info))"
         fi
 }
 
@@ -89,7 +89,7 @@ prompt() {
         0) PS1="${TITLEBAR}┌─$(my_ve)$(chroot)[$my_ps_root][$my_ps_host_root]$(modern_scm_prompt)$(__my_rvm_ruby_version)[${cyan}\w${normal}]$(is_vim_shell)
 └─▪ "
         ;;
-        *) PS1="${TITLEBAR}┌─$(my_ve)$(chroot)[$my_ps_user][$my_ps_host]$(modern_scm_prompt)$(__my_rvm_ruby_version)[${cyan}\w${normal}]$(is_vim_shell)
+        *) PS1="${TITLEBAR}┌─$(my_ve)$(chroot)[$my_ps_user][$my_ps_host]$(__my_rvm_ruby_version)[${cyan}\w${normal}]$(is_vim_shell)$(modern_scm_prompt)
 └─▪ "
         ;;
     esac
